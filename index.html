@@ -34,19 +34,45 @@
             font-size: 18px;
         }
 
+        .date-divider {
+            text-align: center;
+            font-size: 15px;
+            color: gray;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .date-divider::before,
+        .date-divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .date-divider::before {
+            left: 10%;
+        }
+
+        .date-divider::after {
+            right: 10%;
+        }
+
         .message-box {
-            background-color: #fff;
             margin: 20px auto;
             padding: 20px;
             max-width: 600px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             font-size: 16px;
+            animation: fadeIn 0.8s ease-in-out;
         }
 
         .user-name {
             font-weight: bold;
-            color: purple;
         }
 
         .message {
@@ -59,37 +85,52 @@
             color: gray;
             font-size: 14px;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
     <div class="header">EMBASE PRO SUIT</div>
     <div class="sub-header">Pro Suite: The all-in-one Higher Education ERP solution</div>
 
-    <!-- Existing message box (now first) -->
-<div class="message-box">
-    <span class="user-name">Irfan Ahmed</span>
-    <div class="message">
-        7/10/25 ഉപജില്ലാ ട്രെയിനിംഗ് ക്യാമ്പ് നടക്കുന്നതിനാൽ ക്ലാസുകൾ ഉണ്ടായിരിക്കുന്നതല്ല
-    </div>
-    <div class="timestamp">7:14pm</div>
-</div>
+    <!-- 🗓️ Today -->
+    <div class="date-divider">Today</div>
 
-<!-- ✅ New message box -->
-<div class="message-box">
-    <span class="user-name">Sulfi DGC</span>
-    <div class="message">
-        ഇനിയും APAAR ID create ചെയ്യാത്തവർ ഇന്ന് തന്നെ അക്ഷയയിൽ പോയി ചെയ്യേണ്ടതാണ്.
+    <!-- Irfan Ahmed (Today) -->
+    <div class="message-box" style="background-color: #ffffff;">
+        <span class="user-name" style="color: purple;">Irfan Ahmed</span>
+        <div class="message">
+            7/10/25 ഉപജില്ലാ ട്രെയിനിംഗ് ക്യാമ്പ് നടക്കുന്നതിനാൽ ക്ലാസുകൾ ഉണ്ടായിരിക്കുന്നതല്ല
+        </div>
+        <div class="timestamp">7:14pm</div>
     </div>
-    <div class="timestamp">3:41pm</div>
-</div>
 
-<!-- ✅ Last message (was first before) -->
-<div class="message-box">
-    <span class="user-name">Jhinshiya</span>
-    <div class="message">
-        Dear students, Bring your module 4 printed notes tomorrow.
+    <!-- 🗓️ Yesterday -->
+    <div class="date-divider">Yesterday</div>
+
+    <!-- Sulfi DGC (Yesterday, Blue tint) -->
+    <div class="message-box" style="background-color: #e6f2ff;">
+        <span class="user-name" style="color: #027dbd;">Sulfi DGC</span>
+        <div class="message">
+            ഇനിയും APAAR ID create ചെയ്യാത്തവർ ഇന്ന് തന്നെ അക്ഷയയിൽ പോയി ചെയ്യേണ്ടതാണ്.
+        </div>
+        <div class="timestamp">3:41pm</div>
     </div>
-    <div class="timestamp">9:21pm</div>
-</div>
+
+    <!-- 🗓️ October 5 -->
+    <div class="date-divider">October 5, 2025</div>
+
+    <!-- Jhinshiya (Older, Green tint) -->
+    <div class="message-box" style="background-color: #e8f8ec;">
+        <span class="user-name" style="color: #1eb848;">Jhinshiya</span>
+        <div class="message">
+            Dear students, Bring your module 4 printed notes tomorrow.
+        </div>
+        <div class="timestamp">9:21pm</div>
+    </div>
+
 </body>
 </html>
